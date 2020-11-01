@@ -3,12 +3,12 @@
 This project was bootstrapped with [Create React App]. 
 
 ### Implemented
-1.For data fetch open issues from Github’s API (https://developer.github.com/v3/issues/).
-2.Add Infinite loading to allow navigating through the list of issues.
+1. For data fetch open issues from Github’s API (https://developer.github.com/v3/issues/).
+1. Add Infinite loading to allow navigating through the list of issues.
 
 
 ### Partially implemented / Pending
-1.For action in the right top corner (watch/star/fork) simply use redux store to increment counter(no post-call needed).
+1. For action in the right top corner (watch/star/fork) simply use redux store to increment counter(no post-call needed).
 
 
 ## Available Scripts
