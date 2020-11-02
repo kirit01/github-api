@@ -2,15 +2,36 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useSelector,useDispatch} from 'react-redux'
-import rootReducer1 from './reducers/rootReducer1'
+
+
 function App() {
 
   // applying redux
-const counter1 = useSelector(state1 => state1.counter1)
+  function watch(){
+    return {
+        type:"watch",
+        
+    }
+  }
+  
+  function star(){
+    return {
+        type:"star",
+       
+    }
+  }
+  
+  function fork(){
+    return {
+        type:"fork",
+    }
+  }
+  
  const counter = useSelector(state => state.counter)
- 
+ const counter1 = useSelector(state => state.counter1)
+ const counter2 = useSelector(state => state.counter2)
   const dispatch = useDispatch();
-  const dispatch1 = useDispatch();
+
 
   const [page, setPage] = useState(25);
   const [data, setData] = useState('');
@@ -31,14 +52,14 @@ const counter1 = useSelector(state1 => state1.counter1)
 
     <div>
       
-      <h1>counter1:{counter1}</h1> 
         <h1>counter:{counter}</h1> 
         
-        <h1>counter:{counter}</h1> 
-       
-        <button onClick={(()=>dispatch({type:'watch'}))}>watch</button>
-        <button onClick={(()=>dispatch({type:'fork'}))}>fork</button>
-        <button onClick={(()=>dispatch1(rootReducer1({type :'watch'})))}>star</button>
+        <h1>counter:{counter1}</h1> 
+        <h1>counter:{counter2}</h1> 
+
+        <button onClick={(()=>dispatch(fork()))}>fork</button>
+        <button onClick={(()=>dispatch(star()))}>star</button>
+        <button onClick={(()=>dispatch(watch()))}>watch</button>
         
       <InfiniteScroll
       

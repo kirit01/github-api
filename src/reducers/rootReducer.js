@@ -1,24 +1,30 @@
 const initialState = {
-  counter: 1  
+  counter: 0,
+  counter1:0,
+  counter2:0  
 };
 
 
-function rootReducer(state = initialState,action) {
+
+function Reducer(state = initialState,action) {
     switch (action.type) {
     case "watch":
 
-      return { counter: state.counter + 1 };
+      return {...state, counter: state.counter + 1 };
 
     case "star":
        
-      return { counter: state.counter + 1 };
+      return {...state, counter1: state.counter1 + 1 };
 
     case "fork":
 
-      return { counter: state.counter - 1 };
+      return {...state, counter2: state.counter2 + 1 };
 
     default:
       return state;
   }
 }
-export default rootReducer;
+
+
+
+export default Reducer;
