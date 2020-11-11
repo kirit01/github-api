@@ -36,7 +36,6 @@ function App() {
   const [page, setPage] = useState(25);
   const [data, setData] = useState('');
         
- console.log(setData);
  
   useEffect(() => {
     fetch(
@@ -50,17 +49,20 @@ function App() {
 
   return (
 
-    <div>
+    <div className='App'>
       
+      <div className='Redux'>
         <h1>counter:{counter}</h1> 
-        
-        <h1>counter:{counter1}</h1> 
-        <h1>counter:{counter2}</h1> 
-
-        <button onClick={(()=>dispatch(fork()))}>fork</button>
-        <button onClick={(()=>dispatch(star()))}>star</button>
         <button onClick={(()=>dispatch(watch()))}>watch</button>
-        
+
+        <h1>counter:{counter1}</h1> 
+        <button onClick={(()=>dispatch(star()))}>star</button>
+
+        <h1>counter:{counter2}</h1>       
+        <button onClick={(()=>dispatch(fork()))}>fork</button>
+
+      </div>  
+      <h1>Issues List</h1>
       <InfiniteScroll
       
         dataLength={data.length}
